@@ -3,8 +3,11 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import time
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 
 def scrape_pharmeasy(medicine_name):
     url = f"https://pharmeasy.in/search/all?name={medicine_name}"
